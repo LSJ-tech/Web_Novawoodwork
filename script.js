@@ -166,10 +166,21 @@ const translations = {
   }
 };
 
+/**
+ * Obtiene el idioma actualmente activo en el documento.
+ *
+ * @returns {string} Código ISO del idioma activo o 'es' por defecto.
+ */
 function getCurrentLanguage() {
   return document.documentElement.lang || 'es';
 }
 
+/**
+ * Actualiza el contenido visible, metadatos y estado del selector de idioma.
+ *
+ * @param {string} lang Código de idioma a activar, por ejemplo 'es' o 'en'.
+ * @returns {void}
+ */
 function setLanguage(lang) {
   const selected = translations[lang] || translations.es;
   document.documentElement.lang = lang;
