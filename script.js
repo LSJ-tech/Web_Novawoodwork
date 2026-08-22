@@ -166,7 +166,7 @@ function setLanguage(lang) {
     const keyPath = element.dataset.i18n.split('.');
     let value = selected;
     for (const key of keyPath) {
-      value = value && value[key];
+      value = value?.[key];
     }
     if (value) {
       element.textContent = value;
@@ -177,7 +177,7 @@ function setLanguage(lang) {
     const keyPath = element.dataset.i18nPlaceholder.split('.');
     let value = selected;
     for (const key of keyPath) {
-      value = value && value[key];
+      value = value?.[key];
     }
     if (value) {
       element.placeholder = value;
@@ -193,6 +193,26 @@ function setLanguage(lang) {
   if (navToggle) {
     navToggle.setAttribute('aria-label', selected.menuLabel);
   }
+}
+
+/**
+ * Actualiza el texto de un botón de formulario para indicar el estado de envío.
+ *
+ * @param {HTMLButtonElement} button Botón de envío del formulario.
+ * @param {string} lang Código del idioma activo.
+ * @returns {void}
+ */
+function updateSubmitButtonState(button, lang) {
+  const defaultText = translations[lang]?.form?.submit || 'Enviar consulta';
+  const sentText = lang === 'en' ? 'Message sent' : 'Consulta enviada';
+  button.dataset.defaultText = defaultText;
+  button.textContent = sentText;
+  button.disabled = true;
+
+  window.setTimeout(() => {
+    button.textContent = button.dataset.defaultText || defaultText;
+    button.disabled = false;
+  }, 1800);
 }
 
 if (navToggle && mainNav) {
@@ -249,17 +269,8 @@ if (contactForm) {
 
     if (button) {
       const lang = getCurrentLanguage();
-      const defaultText = translations[lang]?.form?.submit || 'Enviar consulta';
-      const sentText = lang === 'en' ? 'Message sent' : 'Consulta enviada';
-      button.dataset.defaultText = defaultText;
-      button.textContent = sentText;
-      button.disabled = true;
-
-      setTimeout(() => {
-        button.textContent = button.dataset.defaultText || defaultText;
-        button.disabled = false;
-        contactForm.reset();
-      }, 1800);
+      updateSubmitButtonState(button, lang);
+      contactForm.reset();
     }
   });
 }
