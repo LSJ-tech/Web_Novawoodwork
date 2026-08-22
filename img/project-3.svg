@@ -1,0 +1,12 @@
+<svg width="1000" height="900" viewBox="0 0 1000 900" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#b78860"/>
+      <stop offset="100%" stop-color="#2b211d"/>
+    </linearGradient>
+  </defs>
+  <rect width="1000" height="900" fill="url(#bg)"/>
+  <rect x="120" y="180" width="760" height="460" rx="26" fill="#ead4b1" opacity="0.74"/>
+  <rect x="220" y="270" width="560" height="260" fill="#4b352e" opacity="0.72"/>
+  <text x="500" y="720" text-anchor="middle" font-size="44" font-family="Arial, sans-serif" fill="#fff5ee" font-weight="700">RECEPCIÓN BOUTIQUE</text>
+</svg>

@@ -1,0 +1,14 @@
+<svg width="700" height="1200" viewBox="0 0 700 1200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#f3e5d6"/>
+      <stop offset="100%" stop-color="#a57a59"/>
+    </linearGradient>
+  </defs>
+  <rect width="700" height="1200" fill="url(#bg)"/>
+  <rect x="110" y="110" width="480" height="970" rx="28" fill="#47362f" opacity="0.68"/>
+  <rect x="180" y="230" width="340" height="200" rx="16" fill="#e0c6a0" opacity="0.9"/>
+  <rect x="180" y="520" width="340" height="300" rx="18" fill="#2a221e" opacity="0.72"/>
+  <rect x="220" y="650" width="260" height="110" rx="10" fill="#d1a574" opacity="0.6"/>
+  <text x="350" y="1020" text-anchor="middle" font-size="30" font-family="Arial, sans-serif" fill="#fff4ea" font-weight="700">ACABADOS IMPERIALES</text>
+</svg>
