@@ -28,61 +28,64 @@
           />
         </a>
 
-        <button
-          class="nav-toggle"
-          type="button"
-          aria-expanded="false"
-          aria-controls="main-nav"
-          aria-label="Abrir menú de navegación"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+        <div class="nav-actions">
+          <div class="lang-switcher" aria-label="Language selector">
+            <button class="lang-btn active" type="button" data-lang="es" aria-pressed="true">ES</button>
+            <button class="lang-btn" type="button" data-lang="en" aria-pressed="false">EN</button>
+          </div>
+
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-expanded="false"
+            aria-controls="main-nav"
+            aria-label="Abrir menú de navegación"
+          >
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
 
         <nav class="main-nav" id="main-nav" aria-label="Navegación principal">
-          <a href="#top" class="active">Inicio</a>
-          <a href="#about">Nosotros</a>
-          <a href="#services">Servicios</a>
-          <a href="#projects">Proyectos</a>
-          <a href="#contact">Contacto</a>
+          <a href="#top" class="active" data-i18n="nav.home">Inicio</a>
+          <a href="#about" data-i18n="nav.about">Nosotros</a>
+          <a href="#services" data-i18n="nav.services">Servicios</a>
+          <a href="#projects" data-i18n="nav.projects">Proyectos</a>
+          <a href="#contact" data-i18n="nav.contact">Contacto</a>
         </nav>
       </div>
     </header>
 
     <main>
-      <!-- IMPORTANTE: guarda todas tus imágenes dentro de la carpeta img/.
-           Cambia solo el nombre del archivo para usar tus propias fotos.
-           Ejemplos válidos: "img/hero.svg", "img/mi-hero.jpg", "img/about-1.png"
-           En este proyecto base, la sección Hero usa hero.svg y las galerías usan project-1.svg, project-2.svg, etc. -->
       <section class="hero">
         <div class="container hero-grid">
           <div class="hero-content reveal">
-            <p class="eyebrow">Carpintería fina · diseño artesanal</p>
-            <h1>Espacios que respiran madera, arte y precisión.</h1>
-            <p class="lead">
+            <p class="eyebrow" data-i18n="hero.eyebrow">Carpintería fina · diseño artesanal</p>
+            <h1 data-i18n="hero.title">Espacios que respiran madera, arte y precisión.</h1>
+            <p class="lead" data-i18n="hero.lead">
               Diseñamos muebles a medida, carpintería arquitectónica y piezas
               exclusivas que elevan la identidad de cada proyecto.
             </p>
             <div class="hero-actions">
-              <a class="btn btn-primary" href="#contact">Solicita una cotización</a>
-              <a class="btn btn-secondary" href="#projects">Ver proyectos</a>
+              <a class="btn btn-primary" href="#contact" data-i18n="hero.ctaPrimary">Solicita una cotización</a>
+              <a class="btn btn-secondary" href="#projects" data-i18n="hero.ctaSecondary">Ver proyectos</a>
             </div>
           </div>
 
           <div class="hero-panel reveal">
             <div class="hero-card card-main">
-              <p class="card-label">Diseño hecho a medida</p>
-              <h2>Más de 15 años creando piezas que perduran.</h2>
+              <p class="card-label" data-i18n="hero.cardLabel">Diseño hecho a medida</p>
+              <h2 data-i18n="hero.cardTitle">Más de 15 años creando piezas que perduran.</h2>
             </div>
             <div class="hero-card card-stats">
               <div>
                 <strong>120+</strong>
-                <span>proyectos entregados</span>
+                <span data-i18n="hero.statProjects">proyectos entregados</span>
               </div>
               <div>
                 <strong>100%</strong>
-                <span>madera natural</span>
+                <span data-i18n="hero.statMaterial">madera natural</span>
               </div>
             </div>
           </div>
@@ -91,40 +94,40 @@
 
       <section class="section about" id="about">
         <div class="container section-heading reveal">
-          <p class="kicker">Nuestra esencia</p>
-          <h2>La madera, trabajada con intención y detalle.</h2>
+          <p class="kicker" data-i18n="about.kicker">Nuestra esencia</p>
+          <h2 data-i18n="about.title">La madera, trabajada con intención y detalle.</h2>
         </div>
 
         <div class="container about-grid">
           <div class="about-copy reveal">
-            <p>
+            <p data-i18n="about.p1">
               En NOVART WOODWORK combinamos tradición artesanal y criterio
               contemporáneo para crear piezas funcionales, cálidas y de gran
               longevidad. Cada proyecto nace con una atención minuciosa al grain,
               la textura, la proporción y la experiencia de uso.
             </p>
-            <p>
+            <p data-i18n="about.p2">
               Desde una mesa central de reunión hasta una solución arquitectónica a
               escala, cada línea está pensada para equilibrar belleza material,
               diseño racional y confort cotidiano.
             </p>
 
             <ul class="feature-list">
-              <li>Diseño a medida para viviendas y espacios comerciales.</li>
-              <li>Selección cuidadosa de maderas nobles y acabados duraderos.</li>
-              <li>Proceso artesanal con control de calidad en cada etapa.</li>
+              <li data-i18n="about.feature1">Diseño a medida para viviendas y espacios comerciales.</li>
+              <li data-i18n="about.feature2">Selección cuidadosa de maderas nobles y acabados duraderos.</li>
+              <li data-i18n="about.feature3">Proceso artesanal con control de calidad en cada etapa.</li>
             </ul>
           </div>
 
           <div class="about-visual reveal" aria-label="Estudio de carpintería">
             <div class="visual-card visual-card-large">
               <div class="visual-overlay">
-                <span>Materiales nobles</span>
+                <span data-i18n="about.visual1">Materiales nobles</span>
               </div>
             </div>
             <div class="visual-card visual-card-small">
               <div class="visual-overlay light">
-                <span>Acabados impecables</span>
+                <span data-i18n="about.visual2">Acabados impecables</span>
               </div>
             </div>
           </div>
@@ -133,15 +136,15 @@
 
       <section class="section services" id="services">
         <div class="container section-heading reveal">
-          <p class="kicker">Servicios</p>
-          <h2>Soluciones de carpintería para cada necesidad.</h2>
+          <p class="kicker" data-i18n="services.kicker">Servicios</p>
+          <h2 data-i18n="services.title">Soluciones de carpintería para cada necesidad.</h2>
         </div>
 
         <div class="container services-grid">
           <article class="service-card reveal">
             <div class="service-icon" aria-hidden="true">01</div>
-            <h3>Muebles a medida</h3>
-            <p>
+            <h3 data-i18n="services.card1Title">Muebles a medida</h3>
+            <p data-i18n="services.card1Text">
               Cocinas, closets, desks, bibliotecas y piezas personalizadas para
               espacios únicos y funcionales.
             </p>
@@ -149,8 +152,8 @@
 
           <article class="service-card reveal">
             <div class="service-icon" aria-hidden="true">02</div>
-            <h3>Carpintería arquitectónica</h3>
-            <p>
+            <h3 data-i18n="services.card2Title">Carpintería arquitectónica</h3>
+            <p data-i18n="services.card2Text">
               Soluciones integradas para reformas, revestimientos, detalles y
               elementos estructurales con un acabado premium.
             </p>
@@ -158,8 +161,8 @@
 
           <article class="service-card reveal">
             <div class="service-icon" aria-hidden="true">03</div>
-            <h3>Diseños exclusivos</h3>
-            <p>
+            <h3 data-i18n="services.card3Title">Diseños exclusivos</h3>
+            <p data-i18n="services.card3Text">
               Proyectos pensados a partir de tu estilo, arquitectura y forma de
               vivir, con una impronta sofisticada y atemporal.
             </p>
@@ -169,36 +172,36 @@
 
       <section class="section projects" id="projects">
         <div class="container section-heading reveal">
-          <p class="kicker">Proyectos</p>
-          <h2>Una selección de trabajos que reflejan nuestra esencia.</h2>
+          <p class="kicker" data-i18n="projects.kicker">Proyectos</p>
+          <h2 data-i18n="projects.title">Una selección de trabajos que reflejan nuestra esencia.</h2>
         </div>
 
         <div class="container project-grid">
           <article class="project-card project-one reveal">
             <div class="project-content">
-              <span>Residencial</span>
-              <h3>Living en roble natural</h3>
+              <span data-i18n="projects.item1Type">Residencial</span>
+              <h3 data-i18n="projects.item1Title">Living en roble natural</h3>
             </div>
           </article>
 
           <article class="project-card project-two reveal">
             <div class="project-content">
-              <span>Arquitectura</span>
-              <h3>Paneles de pared y detalles interiores</h3>
+              <span data-i18n="projects.item2Type">Arquitectura</span>
+              <h3 data-i18n="projects.item2Title">Paneles de pared y detalles interiores</h3>
             </div>
           </article>
 
           <article class="project-card project-three reveal">
             <div class="project-content">
-              <span>Comercial</span>
-              <h3>Recepción boutique de madera</h3>
+              <span data-i18n="projects.item3Type">Comercial</span>
+              <h3 data-i18n="projects.item3Title">Recepción boutique de madera</h3>
             </div>
           </article>
 
           <article class="project-card project-four reveal">
             <div class="project-content">
-              <span>Personalizado</span>
-              <h3>Escritorio de trabajo de alto diseño</h3>
+              <span data-i18n="projects.item4Type">Personalizado</span>
+              <h3 data-i18n="projects.item4Title">Escritorio de trabajo de alto diseño</h3>
             </div>
           </article>
         </div>
@@ -207,17 +210,17 @@
       <section class="section contact" id="contact">
         <div class="container contact-wrap">
           <div class="contact-copy reveal">
-            <p class="kicker">Contacto</p>
-            <h2>Hablemos sobre tu próximo proyecto.</h2>
-            <p>
+            <p class="kicker" data-i18n="contact.kicker">Contacto</p>
+            <h2 data-i18n="contact.title">Hablemos sobre tu próximo proyecto.</h2>
+            <p data-i18n="contact.text">
               Ya sea una pieza única o una intervención integral, te acompañamos en
               cada etapa para convertir tus ideas en materialidad.
             </p>
 
             <ul class="contact-list">
-              <li><strong>Teléfono:</strong> +56 9 1234 5678</li>
-              <li><strong>Email:</strong> hola@novartwoodwork.cl</li>
-              <li><strong>Ubicación:</strong> Santiago, Chile</li>
+              <li><strong data-i18n="contact.phoneLabel">Teléfono:</strong> +56 9 1234 5678</li>
+              <li><strong data-i18n="contact.emailLabel">Email:</strong> hola@novartwoodwork.cl</li>
+              <li><strong data-i18n="contact.locationLabel">Ubicación:</strong> Santiago, Chile</li>
             </ul>
 
             <div class="social-links" aria-label="Redes sociales">
@@ -230,26 +233,26 @@
           <form class="contact-form reveal" action="#" method="post">
             <div class="field-row">
               <label>
-                Nombre
-                <input type="text" name="nombre" placeholder="Tu nombre" />
+                <span data-i18n="form.name">Nombre</span>
+                <input type="text" name="nombre" data-i18n-placeholder="form.namePlaceholder" placeholder="Tu nombre" />
               </label>
               <label>
-                Email
-                <input type="email" name="email" placeholder="tu@email.com" />
+                <span data-i18n="form.email">Email</span>
+                <input type="email" name="email" data-i18n-placeholder="form.emailPlaceholder" placeholder="tu@email.com" />
               </label>
             </div>
 
             <label>
-              Proyecto
-              <input type="text" name="proyecto" placeholder="Ej: Cocina a medida" />
+              <span data-i18n="form.project">Proyecto</span>
+              <input type="text" name="proyecto" data-i18n-placeholder="form.projectPlaceholder" placeholder="Ej: Cocina a medida" />
             </label>
 
             <label>
-              Mensaje
-              <textarea name="mensaje" rows="5" placeholder="Cuéntanos qué te gustaría crear..."></textarea>
+              <span data-i18n="form.message">Mensaje</span>
+              <textarea name="mensaje" rows="5" data-i18n-placeholder="form.messagePlaceholder" placeholder="Cuéntanos qué te gustaría crear..."></textarea>
             </label>
 
-            <button type="submit" class="btn btn-primary full-width">Enviar consulta</button>
+            <button type="submit" class="btn btn-primary full-width" data-i18n="form.submit">Enviar consulta</button>
           </form>
         </div>
       </section>
@@ -259,9 +262,9 @@
       <div class="container footer-wrap">
         <p>© <span id="year"></span> NOVART WOODWORK</p>
         <div class="footer-links">
-          <a href="#about">Nosotros</a>
-          <a href="#services">Servicios</a>
-          <a href="#contact">Contacto</a>
+          <a href="#about" data-i18n="footer.about">Nosotros</a>
+          <a href="#services" data-i18n="footer.services">Servicios</a>
+          <a href="#contact" data-i18n="footer.contact">Contacto</a>
         </div>
       </div>
     </footer>

@@ -144,6 +144,42 @@ p {
   transform: translateY(-1px);
 }
 
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  margin-left: auto;
+}
+
+.lang-switcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.28rem;
+  border: 1px solid rgba(74, 59, 50, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.38);
+}
+
+.lang-btn {
+  border: none;
+  background: transparent;
+  color: var(--primary);
+  font-size: 0.73rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  padding: 0.45rem 0.7rem;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.lang-btn.active {
+  background: var(--primary);
+  color: #f8f3ee;
+  box-shadow: 0 8px 18px rgba(74, 59, 50, 0.12);
+}
+
 .main-nav {
   display: flex;
   align-items: center;
@@ -699,6 +735,10 @@ textarea {
 }
 
 @media (max-width: 700px) {
+  .nav-actions {
+    margin-left: 0;
+  }
+
   .nav-toggle {
     display: block;
   }
