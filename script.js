@@ -3,167 +3,124 @@ const mainNav = document.querySelector('.main-nav');
 const navLinks = document.querySelectorAll('.main-nav a');
 const langButtons = document.querySelectorAll('.lang-btn');
 
-const translations = {
-  es: {
-    metaDescription: 'NOVART WOODWORK crea muebles y soluciones de carpintería fina hechas a medida para espacios elegantes, funcionales y con personalidad.',
-    pageTitle: 'NOVART WOODWORK | Carpintería fina',
-    nav: {
-      home: 'Inicio',
-      about: 'Nosotros',
-      services: 'Servicios',
-      projects: 'Proyectos',
-      contact: 'Contacto'
-    },
-    hero: {
-      eyebrow: 'Carpintería fina · diseño artesanal',
-      title: 'Espacios que respiran madera, arte y precisión.',
-      lead: 'Diseñamos muebles a medida, carpintería arquitectónica y piezas exclusivas que elevan la identidad de cada proyecto.',
-      ctaPrimary: 'Solicita una cotización',
-      ctaSecondary: 'Ver proyectos',
-      cardLabel: 'Diseño hecho a medida',
-      cardTitle: 'Más de 15 años creando piezas que perduran.',
-      statProjects: 'proyectos entregados',
-      statMaterial: 'madera natural'
-    },
-    about: {
-      kicker: 'Nuestra esencia',
-      title: 'La madera, trabajada con intención y detalle.',
-      p1: 'En NOVART WOODWORK combinamos tradición artesanal y criterio contemporáneo para crear piezas funcionales, cálidas y de gran longevidad. Cada proyecto nace con una atención minuciosa al grain, la textura, la proporción y la experiencia de uso.',
-      p2: 'Desde una mesa central de reunión hasta una solución arquitectónica a escala, cada línea está pensada para equilibrar belleza material, diseño racional y confort cotidiano.',
-      feature1: 'Diseño a medida para viviendas y espacios comerciales.',
-      feature2: 'Selección cuidadosa de maderas nobles y acabados duraderos.',
-      feature3: 'Proceso artesanal con control de calidad en cada etapa.',
-      visual1: 'Materiales nobles',
-      visual2: 'Acabados impecables'
-    },
-    services: {
-      kicker: 'Servicios',
-      title: 'Soluciones de carpintería para cada necesidad.',
-      card1Title: 'Muebles a medida',
-      card1Text: 'Cocinas, closets, desks, bibliotecas y piezas personalizadas para espacios únicos y funcionales.',
-      card2Title: 'Carpintería arquitectónica',
-      card2Text: 'Soluciones integradas para reformas, revestimientos, detalles y elementos estructurales con un acabado premium.',
-      card3Title: 'Diseños exclusivos',
-      card3Text: 'Proyectos pensados a partir de tu estilo, arquitectura y forma de vivir, con una impronta sofisticada y atemporal.'
-    },
-    projects: {
-      kicker: 'Proyectos',
-      title: 'Una selección de trabajos que reflejan nuestra esencia.',
-      item1Type: 'Residencial',
-      item1Title: 'Living en roble natural',
-      item2Type: 'Arquitectura',
-      item2Title: 'Paneles de pared y detalles interiores',
-      item3Type: 'Comercial',
-      item3Title: 'Recepción boutique de madera',
-      item4Type: 'Personalizado',
-      item4Title: 'Escritorio de trabajo de alto diseño'
-    },
-    contact: {
-      kicker: 'Contacto',
-      title: 'Hablemos sobre tu próximo proyecto.',
-      text: 'Ya sea una pieza única o una intervención integral, te acompañamos en cada etapa para convertir tus ideas en materialidad.',
-      phoneLabel: 'Teléfono:',
-      emailLabel: 'Email:',
-      locationLabel: 'Ubicación:'
-    },
-    form: {
-      name: 'Nombre',
-      email: 'Email',
-      project: 'Proyecto',
-      message: 'Mensaje',
-      namePlaceholder: 'Tu nombre',
-      emailPlaceholder: 'tu@email.com',
-      projectPlaceholder: 'Ej: Cocina a medida',
-      messagePlaceholder: 'Cuéntanos qué te gustaría crear...',
-      submit: 'Enviar consulta'
-    },
-    footer: {
-      about: 'Nosotros',
-      services: 'Servicios',
-      contact: 'Contacto'
-    },
-    menuLabel: 'Abrir menú de navegación'
+const translationCatalog = {
+  metaDescription: ['NOVART WOODWORK crea muebles y soluciones de carpintería fina hechas a medida para espacios elegantes, funcionales y con personalidad.', 'NOVART WOODWORK creates custom furniture and fine woodworking solutions designed for elegant, functional, and distinctive spaces.'],
+  pageTitle: ['NOVART WOODWORK | Carpintería fina', 'NOVART WOODWORK | Fine woodworking'],
+  nav: {
+    home: ['Inicio', 'Home'],
+    about: ['Nosotros', 'About'],
+    services: ['Servicios', 'Services'],
+    projects: ['Proyectos', 'Projects'],
+    contact: ['Contacto', 'Contact']
   },
-  en: {
-    metaDescription: 'NOVART WOODWORK creates custom furniture and fine woodworking solutions designed for elegant, functional, and distinctive spaces.',
-    pageTitle: 'NOVART WOODWORK | Fine woodworking',
-    nav: {
-      home: 'Home',
-      about: 'About',
-      services: 'Services',
-      projects: 'Projects',
-      contact: 'Contact'
-    },
-    hero: {
-      eyebrow: 'Fine woodworking · handcrafted design',
-      title: 'Spaces that breathe wood, art and precision.',
-      lead: 'We design custom furniture, architectural woodworking and exclusive pieces that elevate the identity of each project.',
-      ctaPrimary: 'Request a quote',
-      ctaSecondary: 'View projects',
-      cardLabel: 'Tailor-made design',
-      cardTitle: '15+ years crafting pieces that last.',
-      statProjects: 'projects delivered',
-      statMaterial: 'natural wood'
-    },
-    about: {
-      kicker: 'Our essence',
-      title: 'Wood, shaped with intention and detail.',
-      p1: 'At NOVART WOODWORK we combine artisanal tradition with contemporary vision to create functional, warm and long-lasting pieces. Each project begins with careful attention to grain, texture, proportion and everyday experience.',
-      p2: 'From a central meeting table to a full architectural solution, every line is designed to balance material beauty, rational design and everyday comfort.',
-      feature1: 'Custom design for residential and commercial spaces.',
-      feature2: 'Careful selection of premium wood and durable finishes.',
-      feature3: 'Artisanal process with strict quality control at every stage.',
-      visual1: 'Noble materials',
-      visual2: 'Impeccable finishes'
-    },
-    services: {
-      kicker: 'Services',
-      title: 'Woodworking solutions for every need.',
-      card1Title: 'Custom furniture',
-      card1Text: 'Kitchens, closets, desks, libraries and tailored pieces for unique and functional spaces.',
-      card2Title: 'Architectural woodworking',
-      card2Text: 'Integrated solutions for renovations, cladding, details and structural elements with a premium finish.',
-      card3Title: 'Exclusive designs',
-      card3Text: 'Projects created from your style, architecture and way of living, with a sophisticated and timeless character.'
-    },
-    projects: {
-      kicker: 'Projects',
-      title: 'A selection of works that reflect our essence.',
-      item1Type: 'Residential',
-      item1Title: 'Natural oak living room',
-      item2Type: 'Architecture',
-      item2Title: 'Wall panels and interior details',
-      item3Type: 'Commercial',
-      item3Title: 'Boutique wood reception',
-      item4Type: 'Custom',
-      item4Title: 'High-end work desk'
-    },
-    contact: {
-      kicker: 'Contact',
-      title: 'Let’s talk about your next project.',
-      text: 'Whether it is a unique piece or a full-scale intervention, we guide you through every stage to bring your ideas to life in material form.',
-      phoneLabel: 'Phone:',
-      emailLabel: 'Email:',
-      locationLabel: 'Location:'
-    },
-    form: {
-      name: 'Name',
-      email: 'Email',
-      project: 'Project',
-      message: 'Message',
-      namePlaceholder: 'Your name',
-      emailPlaceholder: 'you@email.com',
-      projectPlaceholder: 'e.g. Custom kitchen',
-      messagePlaceholder: 'Tell us what you would like to create...',
-      submit: 'Send inquiry'
-    },
-    footer: {
-      about: 'About',
-      services: 'Services',
-      contact: 'Contact'
-    },
-    menuLabel: 'Open navigation menu'
-  }
+  hero: {
+    eyebrow: ['Carpintería fina · diseño artesanal', 'Fine woodworking · handcrafted design'],
+    title: ['Espacios que respiran madera, arte y precisión.', 'Spaces that breathe wood, art and precision.'],
+    lead: ['Diseñamos muebles a medida, carpintería arquitectónica y piezas exclusivas que elevan la identidad de cada proyecto.', 'We design custom furniture, architectural woodworking and exclusive pieces that elevate the identity of each project.'],
+    ctaPrimary: ['Solicita una cotización', 'Request a quote'],
+    ctaSecondary: ['Ver proyectos', 'View projects'],
+    cardLabel: ['Diseño hecho a medida', 'Tailor-made design'],
+    cardTitle: ['Más de 15 años creando piezas que perduran.', '15+ years crafting pieces that last.'],
+    statProjects: ['proyectos entregados', 'projects delivered'],
+    statMaterial: ['madera natural', 'natural wood']
+  },
+  about: {
+    kicker: ['Nuestra esencia', 'Our essence'],
+    title: ['La madera, trabajada con intención y detalle.', 'Wood, shaped with intention and detail.'],
+    p1: ['En NOVART WOODWORK combinamos tradición artesanal y criterio contemporáneo para crear piezas funcionales, cálidas y de gran longevidad. Cada proyecto nace con una atención minuciosa al grain, la textura, la proporción y la experiencia de uso.', 'At NOVART WOODWORK we combine artisanal tradition with contemporary vision to create functional, warm and long-lasting pieces. Each project begins with careful attention to grain, texture, proportion and everyday experience.'],
+    p2: ['Desde una mesa central de reunión hasta una solución arquitectónica a escala, cada línea está pensada para equilibrar belleza material, diseño racional y confort cotidiano.', 'From a central meeting table to a full architectural solution, every line is designed to balance material beauty, rational design and everyday comfort.'],
+    feature1: ['Diseño a medida para viviendas y espacios comerciales.', 'Custom design for residential and commercial spaces.'],
+    feature2: ['Selección cuidadosa de maderas nobles y acabados duraderos.', 'Careful selection of premium wood and durable finishes.'],
+    feature3: ['Proceso artesanal con control de calidad en cada etapa.', 'Artisanal process with strict quality control at every stage.'],
+    visual1: ['Materiales nobles', 'Noble materials'],
+    visual2: ['Acabados impecables', 'Impeccable finishes']
+  },
+  services: {
+    kicker: ['Servicios', 'Services'],
+    title: ['Soluciones de carpintería para cada necesidad.', 'Woodworking solutions for every need.'],
+    card1Title: ['Muebles a medida', 'Custom furniture'],
+    card1Text: ['Cocinas, closets, desks, bibliotecas y piezas personalizadas para espacios únicos y funcionales.', 'Kitchens, closets, desks, libraries and tailored pieces for unique and functional spaces.'],
+    card2Title: ['Carpintería arquitectónica', 'Architectural woodworking'],
+    card2Text: ['Soluciones integradas para reformas, revestimientos, detalles y elementos estructurales con un acabado premium.', 'Integrated solutions for renovations, cladding, details and structural elements with a premium finish.'],
+    card3Title: ['Diseños exclusivos', 'Exclusive designs'],
+    card3Text: ['Proyectos pensados a partir de tu estilo, arquitectura y forma de vivir, con una impronta sofisticada y atemporal.', 'Projects created from your style, architecture and way of living, with a sophisticated and timeless character.']
+  },
+  projects: {
+    kicker: ['Proyectos', 'Projects'],
+    title: ['Una selección de trabajos que reflejan nuestra esencia.', 'A selection of works that reflect our essence.'],
+    item1Type: ['Residencial', 'Residential'],
+    item1Title: ['Living en roble natural', 'Natural oak living room'],
+    item2Type: ['Arquitectura', 'Architecture'],
+    item2Title: ['Paneles de pared y detalles interiores', 'Wall panels and interior details'],
+    item3Type: ['Comercial', 'Commercial'],
+    item3Title: ['Recepción boutique de madera', 'Boutique wood reception'],
+    item4Type: ['Personalizado', 'Custom'],
+    item4Title: ['Escritorio de trabajo de alto diseño', 'High-end work desk']
+  },
+  contact: {
+    kicker: ['Contacto', 'Contact'],
+    title: ['Hablemos sobre tu próximo proyecto.', 'Let’s talk about your next project.'],
+    text: ['Ya sea una pieza única o una intervención integral, te acompañamos en cada etapa para convertir tus ideas en materialidad.', 'Whether it is a unique piece or a full-scale intervention, we guide you through every stage to bring your ideas to life in material form.'],
+    phoneLabel: ['Teléfono:', 'Phone:'],
+    emailLabel: ['Email:', 'Email:'],
+    locationLabel: ['Ubicación:', 'Location:']
+  },
+  form: {
+    name: ['Nombre', 'Name'],
+    email: ['Email', 'Email'],
+    project: ['Proyecto', 'Project'],
+    message: ['Mensaje', 'Message'],
+    namePlaceholder: ['Tu nombre', 'Your name'],
+    emailPlaceholder: ['tu@email.com', 'you@email.com'],
+    projectPlaceholder: ['Ej: Cocina a medida', 'e.g. Custom kitchen'],
+    messagePlaceholder: ['Cuéntanos qué te gustaría crear...', 'Tell us what you would like to create...'],
+    submit: ['Enviar consulta', 'Send inquiry']
+  },
+  footer: {
+    about: ['Nosotros', 'About'],
+    services: ['Servicios', 'Services'],
+    contact: ['Contacto', 'Contact']
+  },
+  menuLabel: ['Abrir menú de navegación', 'Open navigation menu']
+};
+
+/**
+ * Crea un conjunto de textos traducidos para un idioma concreto a partir del catálogo base.
+ *
+ * @param {string} lang Código ISO del idioma a resolver.
+ * @returns {{[key: string]: any}} Objeto de traducciones del idioma solicitado.
+ */
+function buildTranslations(lang) {
+  const localeIndex = lang === 'en' ? 1 : 0;
+
+  /**
+   * Genera un bloque de traducciones a partir de un mapa de cadenas por idioma.
+   *
+   * @param {{[key: string]: string[]}} section Bloque de traducciones con arrays por idioma.
+   * @returns {{[key: string]: string}} Sección traducida.
+   */
+  const buildSection = (section) => Object.fromEntries(
+    Object.entries(section).map(([key, values]) => [key, values[localeIndex]])
+  );
+
+  return {
+    metaDescription: translationCatalog.metaDescription[localeIndex],
+    pageTitle: translationCatalog.pageTitle[localeIndex],
+    nav: buildSection(translationCatalog.nav),
+    hero: buildSection(translationCatalog.hero),
+    about: buildSection(translationCatalog.about),
+    services: buildSection(translationCatalog.services),
+    projects: buildSection(translationCatalog.projects),
+    contact: buildSection(translationCatalog.contact),
+    form: buildSection(translationCatalog.form),
+    footer: buildSection(translationCatalog.footer),
+    menuLabel: translationCatalog.menuLabel[localeIndex]
+  };
+}
+
+const translations = {
+  es: buildTranslations('es'),
+  en: buildTranslations('en')
 };
 
 /**
