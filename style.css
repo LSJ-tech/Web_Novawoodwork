@@ -296,15 +296,15 @@ p {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #a4704a 0%, #7a583d 100%);
-  color: #fff;
+  background: #7a583d;
+  color: #fffaf5;
   box-shadow: 0 16px 28px rgba(103, 66, 40, 0.25);
 }
 
 .btn-secondary {
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  color: #fff;
-  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: #fffaf5;
+  background: rgba(27, 18, 14, 0.36);
 }
 
 .hero-panel {
