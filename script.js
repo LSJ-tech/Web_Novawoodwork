@@ -85,35 +85,48 @@ const translationCatalog = {
 };
 
 /**
+ * Obtiene el índice de idioma correspondiente al catálogo de traducciones.
+ *
+ * @param {string} lang Código ISO del idioma.
+ * @returns {number} Índice de idioma del array de traducciones.
+ */
+function getLocaleIndex(lang) {
+  return lang === 'en' ? 1 : 0;
+}
+
+/**
+ * Construye un bloque de traducciones a partir de un conjunto de textos por idioma.
+ *
+ * @param {{ [key: string]: string[] }} section Sección que contiene traducciones por idioma.
+ * @param {number} localeIndex Índice de idioma activo.
+ * @returns {{ [key: string]: string }} Objeto con la sección traducida.
+ */
+function buildSection(section, localeIndex) {
+  return Object.fromEntries(
+    Object.entries(section).map(([key, values]) => [key, values[localeIndex]])
+  );
+}
+
+/**
  * Crea un conjunto de textos traducidos para un idioma concreto a partir del catálogo base.
  *
  * @param {string} lang Código ISO del idioma a resolver.
  * @returns {{[key: string]: any}} Objeto de traducciones del idioma solicitado.
  */
 function buildTranslations(lang) {
-  const localeIndex = lang === 'en' ? 1 : 0;
-
-  /**
-   * Genera un bloque de traducciones a partir de un mapa de cadenas por idioma.
-   *
-   * @param {{[key: string]: string[]}} section Bloque de traducciones con arrays por idioma.
-   * @returns {{[key: string]: string}} Sección traducida.
-   */
-  const buildSection = (section) => Object.fromEntries(
-    Object.entries(section).map(([key, values]) => [key, values[localeIndex]])
-  );
+  const localeIndex = getLocaleIndex(lang);
 
   return {
     metaDescription: translationCatalog.metaDescription[localeIndex],
     pageTitle: translationCatalog.pageTitle[localeIndex],
-    nav: buildSection(translationCatalog.nav),
-    hero: buildSection(translationCatalog.hero),
-    about: buildSection(translationCatalog.about),
-    services: buildSection(translationCatalog.services),
-    projects: buildSection(translationCatalog.projects),
-    contact: buildSection(translationCatalog.contact),
-    form: buildSection(translationCatalog.form),
-    footer: buildSection(translationCatalog.footer),
+    nav: buildSection(translationCatalog.nav, localeIndex),
+    hero: buildSection(translationCatalog.hero, localeIndex),
+    about: buildSection(translationCatalog.about, localeIndex),
+    services: buildSection(translationCatalog.services, localeIndex),
+    projects: buildSection(translationCatalog.projects, localeIndex),
+    contact: buildSection(translationCatalog.contact, localeIndex),
+    form: buildSection(translationCatalog.form, localeIndex),
+    footer: buildSection(translationCatalog.footer, localeIndex),
     menuLabel: translationCatalog.menuLabel[localeIndex]
   };
 }
